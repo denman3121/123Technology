@@ -233,13 +233,16 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
         return description;
     }
 
+    private static final int STAINLESS_INDEX = 15;
+    private static final int STEEL_GEAR_BOX_CASING_INDEX = 3;
+
     @Override
     public IStructureDefinition<OTEWoodenFusionReactor> getStructureDefinition() {
         if (STRUCTURE_DEFINITION == null) {
             STRUCTURE_DEFINITION = StructureDefinition.<OTEWoodenFusionReactor>builder()
                 .addShape(STRUCTURE_PIECE_MAIN, shapeMain)
-                .addElement('F', ofBlock(Blocks.planks, 0))
-                .addElement('E', ofBlock(Blocks.planks, 0))
+                .addElement('F', ofBlock(GregTechAPI.sBlockCasings4, STAINLESS_INDEX))
+                .addElement('E', ofBlock(GregTechAPI.sBlockCasings2, STEEL_GEAR_BOX_CASING_INDEX))
                 .addElement(
                     'D',
                     buildHatchAdder(OTEWoodenFusionReactor.class).atLeast(InputHatch, OutputHatch)
@@ -334,7 +337,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "          FFF                       FFF          ",
             "         FFBFFF                   FFFBFF         ",
-            "         FBBBFF                   FFBBBF         ",
+            "         EBBBFF                   FFBBBE         ",
             "         FFBFFF                   FFFBFF         ",
             "          FFF                       FFF          ",
             "                                                 "
@@ -342,7 +345,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "         FFF                         FFF         ",
             "        FFBFE                       EFBFF        ",
-            "        FBBBF                       FBBBF        ",
+            "        FBBBE                       EBBBF        ",
             "        FFBFE                       EFBFF        ",
             "         FFF                         FFF         ",
             "                                                 "
@@ -358,7 +361,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "       FFF                             FFF       ",
             "      FFBFE                           EFBFF      ",
-            "      FBBBF                           FBBBF      ",
+            "      FBBBE                           EBBBF      ",
             "      FFBFE                           EFBFF      ",
             "       FFF                             FFF       ",
             "                                                 "
@@ -550,7 +553,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "       FFF                             FFF       ",
             "      FFBFE                           EFBFF      ",
-            "      FBBBF                           FBBBF      ",
+            "      FBBBE                           EBBBF      ",
             "      FFBFE                           EFBFF      ",
             "       FFF                             FFF       ",
             "                                                 "
@@ -566,7 +569,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "         FFF                         FFF         ",
             "        FFBFE                       EFBFF        ",
-            "        FBBBF                       FBBBF        ",
+            "        FBBBE                       EBBBF        ",
             "        FFBFE                       EFBFF        ",
             "         FFF                         FFF         ",
             "                                                 "
@@ -574,7 +577,7 @@ public class OTEWoodenFusionReactor extends OTHMultiMachineBase<OTEWoodenFusionR
             "                                                 ",
             "          FFF                       FFF          ",
             "         FFBFFF                   FFFBFF         ",
-            "         FBBBFF                   FFBBBF         ",
+            "         EBBBFF                   FFBBBE         ",
             "         FFBFFF                   FFFBFF         ",
             "          FFF                       FFF          ",
             "                                                 "

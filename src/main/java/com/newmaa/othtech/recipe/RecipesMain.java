@@ -21,6 +21,7 @@ import static tectech.thing.CustomItemList.eM_Hollow;
 import static tectech.thing.CustomItemList.eM_Power;
 import static tectech.thing.CustomItemList.eM_Spacetime;
 
+import gregtech.api.interfaces.IRecipeMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -476,23 +477,32 @@ public class RecipesMain implements IRecipePool {
             1024 * 20,
             (int) TierEU.HV);
         // Wood Fusion
-        addCraftingRecipe(
-            OTHItemList.WoodFusion.get(1),
-            new Object[] { "AAA", "ABA", "AAA", 'A', new ItemStack(Blocks.log, 1, 0), 'B',
-                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 2) });
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 2),
+                GTModHandler.getModItem("gregtech","gt.blockcasings2", 8, 3),
+                GTModHandler.getModItem("bartworks","bw.werkstoffblockscasing.01", 2, 32100),
+                GTModHandler.getModItem("gregtech","gt.blockcasings4", 2, 9),
+                ItemList.Electric_Motor_LV.get(4)
+                )
+            .itemOutputs(OTHItemList.WoodFusion.get(1))
+
+            .duration(60 * SECONDS)
+            .eut(30)
+            .addTo(assemblerRecipes);
         // Records
         GTValues.RA.stdBuilder()
             .itemInputs(new ItemStack(Items.gold_ingot, 1), GTUtility.getIntegratedCircuit(1))
             .itemOutputs(new ItemStack(ItemLoader.RecordPRKA, 1))
 
-            .duration(1949 * 20)
+            .duration(1949 * SECONDS)
             .eut(123)
             .addTo(RecipeMaps.laserEngraverRecipes);
         GTValues.RA.stdBuilder()
             .itemInputs(new ItemStack(Items.gold_ingot, 1), GTUtility.getIntegratedCircuit(2))
             .itemOutputs(new ItemStack(ItemLoader.RecordPRKB, 1))
 
-            .duration(1949 * 20)
+            .duration(1949 * SECONDS)
             .eut(123)
             .addTo(RecipeMaps.laserEngraverRecipes);
         // LCL
